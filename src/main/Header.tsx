@@ -5,7 +5,11 @@ import Link from "@mui/material/Link";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import logo from "../assets/logo.png";
+import RKITTY from "../assets/RKITTY.png";
 import { defaultContentPadding, defaultHeaderBg } from "../utils/theme";
+import FancyButton from "../common/components/FancyButton";
+import { useTranslation } from "react-i18next";
+import MoreMenu from "../common/components/MoreMenu";
 
 const useStyles = makeStyles({
   container: {
@@ -28,6 +32,7 @@ const useStyles = makeStyles({
 
 export default function Header(props: { className?: string }) {
   const classes = useStyles();
+  const { t } = useTranslation();
 
   // const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -49,6 +54,7 @@ export default function Header(props: { className?: string }) {
       }}
     >
       <Link href={"https://rivrkitty.com"}>
+        <img className={classes.logo} src={RKITTY} alt="RivrKitty" />
         <img className={classes.logo} src={logo} alt="RivrKitty" />
       </Link>
       <MediaQuery maxWidth={1023}>
@@ -66,7 +72,8 @@ export default function Header(props: { className?: string }) {
       <MediaQuery minWidth={1024}>
         <Divider />
         <Box flex={1} />
-        {/* <MoreMenu /> */}
+        <FancyButton> {t("launchApp")}</FancyButton>
+        <MoreMenu />
       </MediaQuery>
     </Box>
   );
