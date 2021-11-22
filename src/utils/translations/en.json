@@ -1,5 +1,14 @@
 {
   "translation": {
-    "max": "max"
+    "max": "max",
+    "launchApp": "Launch App",
+    "menuTelegram": "Telegram",
+    "menuTwitter": "Twitter",
+    "menuGithub": "Github",
+    "menuDocumentation": "Documentation",
+    "menuTelegramSecondaryText": "Join Our Telegram Channel",
+    "menuTwitterSecondaryText": "Follow us on Twitter",
+    "menuGithubSecondaryText": "Check our code on Github",
+    "menuDocumentationSecondaryText": "New to RivrKitty? Check out our documentation"
   }
 }
