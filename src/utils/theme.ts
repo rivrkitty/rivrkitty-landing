@@ -37,6 +37,13 @@ export default createTheme({
     borderRadius: 12,
   },
   typography: {
+    h1: {
+      fontFamily: "Roboto Mono",
+      fontStyle: "Bold",
+      fontWeight: "700",
+      fontSize: "50px",
+      lineHeight: "66px",
+    },
     caption: {
       color: "#979E9C",
     },

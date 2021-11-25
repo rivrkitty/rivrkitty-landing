@@ -7,7 +7,6 @@ import Divider from "@mui/material/Divider";
 import logo from "../assets/logo.png";
 import RKITTY from "../assets/RKITTY.png";
 import WALLET from "../assets/token/WALLET.png";
-import { defaultContentPadding, defaultHeaderBg } from "../utils/theme";
 import FancyButton from "../common/components/FancyButton";
 import { useTranslation } from "react-i18next";
 import MoreMenu from "../common/components/HeaderComponents/MoreMenu";
