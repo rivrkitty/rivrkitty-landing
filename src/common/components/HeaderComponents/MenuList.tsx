@@ -4,7 +4,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemButton from "@mui/material/ListItemButton";
 import Avatar from "@mui/material/Avatar";
-import { getSingleAssetSrc } from "../../utils/getSingleAssetSrc";
+import { getSingleAssetSrc } from "../../../utils/getSingleAssetSrc";
 import { useTranslation } from "react-i18next";
 import makeStyles from "@mui/styles/makeStyles";
 

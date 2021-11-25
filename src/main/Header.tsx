@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import MediaQuery from "react-responsive";
 import makeStyles from "@mui/styles/makeStyles";
 import Link from "@mui/material/Link";
@@ -6,10 +6,12 @@ import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import logo from "../assets/logo.png";
 import RKITTY from "../assets/RKITTY.png";
+import WALLET from "../assets/token/WALLET.png";
 import { defaultContentPadding, defaultHeaderBg } from "../utils/theme";
 import FancyButton from "../common/components/FancyButton";
 import { useTranslation } from "react-i18next";
-import MoreMenu from "../common/components/MoreMenu";
+import MoreMenu from "../common/components/HeaderComponents/MoreMenu";
+import MobileMenu from "../common/components/HeaderComponents/MobileMenu";
 
 const useStyles = makeStyles({
   container: {
@@ -28,17 +30,20 @@ const useStyles = makeStyles({
     height: 30,
     marginRight: 16,
   },
+  walletIcon: {
+    verticalAlign: "middle",
+  },
 });
 
 export default function Header(props: { className?: string }) {
   const classes = useStyles();
   const { t } = useTranslation();
 
-  // const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // const toggleMobileMenu = () => {
-  //   setMobileMenuOpen(!isMobileMenuOpen);
-  // };
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   return (
     <Box
@@ -49,8 +54,11 @@ export default function Header(props: { className?: string }) {
         flexFlow: "row wrap",
         alignItems: "center",
         height: 64,
-        ...defaultHeaderBg,
-        ...defaultContentPadding,
+        position: "fixed",
+        width: "90%",
+        paddingLeft: "5%",
+        paddingRight: "5%",
+        backgroundColor: "#15152B",
       }}
     >
       <Link href={"https://rivrkitty.com"}>
@@ -63,10 +71,13 @@ export default function Header(props: { className?: string }) {
             marginLeft: "auto",
           }}
         >
-          {/* <MobileMenu
+          <Link href={"#"}>
+            <img className={classes.walletIcon} src={WALLET} alt="Wallet" />
+          </Link>
+          <MobileMenu
             isOpen={isMobileMenuOpen}
             toggleMobileMenu={toggleMobileMenu}
-          /> */}
+          />
         </div>
       </MediaQuery>
       <MediaQuery minWidth={1024}>
