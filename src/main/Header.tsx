@@ -19,6 +19,7 @@ const useStyles = makeStyles({
     alignItems: "center",
     paddingLeft: "10%",
     paddingRight: "10%",
+    zIndex: 100,
   },
   link: {
     marginLeft: 8,

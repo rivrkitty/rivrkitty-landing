@@ -21,7 +21,7 @@ export default createTheme({
       contrastText: "white",
     },
     secondary: {
-      main: "rgba(255, 255, 255, 0.1)",
+      main: "#EA8478",
       contrastText: "white",
     },
     info: {
@@ -48,7 +48,25 @@ export default createTheme({
       color: "white",
       fontFamily: "Roboto Mono",
       fontWeight: "700",
+      fontSize: "46px",
+    },
+    h3: {
+      color: "white",
+      fontFamily: "Roboto Mono",
+      fontWeight: "700",
       fontSize: "40px",
+    },
+    h4: {
+      color: "white",
+      fontFamily: "Roboto Mono",
+      fontWeight: "700",
+      fontSize: "34px",
+    },
+    subtitle1: {
+      color: "white",
+      fontFamily: "Nunito",
+      fontWeight: "700",
+      fontSize: "26px",
     },
     subtitle2: {
       color: "white",

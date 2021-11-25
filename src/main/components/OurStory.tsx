@@ -40,7 +40,7 @@ export default function OurStory() {
             md={7}
             sx={{ display: "flex", flexDirection: "column" }}
           >
-            <Typography variant="h2">{t("storyTitle")}</Typography>
+            <Typography variant="h3">{t("storyTitle")}</Typography>
             <Typography
               variant="body1"
               sx={{ marginTop: 2, marginBottom: 2, color: "black" }}
