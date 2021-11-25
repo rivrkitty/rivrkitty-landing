@@ -5,6 +5,7 @@ import Header from "./Header";
 import LandingBanner from "./components/LandingBanner";
 import LandingFarmInfo from "./components/LandingFarmInfo";
 import NFTPreview from "./components/NFTPreview";
+import OurStory from "./components/OurStory";
 
 export default function Main() {
   return (
@@ -15,7 +16,7 @@ export default function Main() {
         height: "100%",
         display: "flex",
         flexDirection: "column",
-        backgroundColor: "black",
+        backgroundColor: "#121A28",
       }}
     >
       <Header />
@@ -42,6 +43,7 @@ export default function Main() {
         <LandingBanner />
         <LandingFarmInfo />
         <NFTPreview />
+        <OurStory />
       </Box>
     </Box>
   );

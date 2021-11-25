@@ -23,7 +23,7 @@ function DescriptionText() {
   const { t } = useTranslation();
   return (
     <>
-      <Typography variant="body1" sx={{ marginTop: 2, paddingBottom: 2 }}>
+      <Typography variant="body1" sx={{ marginTop: 2, marginBottom: 2 }}>
         {t("nftBody")}
       </Typography>
       <Button
@@ -55,10 +55,9 @@ export default function NFTPreview() {
     <Grid
       container
       sx={{
-        backgroundColor: "#121A28",
         ...defaultContentPadding,
-        paddingTop: 4,
-        paddingBottom: 4,
+        paddingTop: 6,
+        paddingBottom: 8,
       }}
       spacing={4}
     >
