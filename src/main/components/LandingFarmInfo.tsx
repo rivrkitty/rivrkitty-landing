@@ -9,7 +9,7 @@ export default function LandingFarmInfo() {
         backgroundImage: `url(${getSingleAssetSrc("LANDINGBG").default})`,
         width: "100%",
         marginTop: "-190px", //Adjust the opacity as per figma
-        height: 400,
+        height: 100,
         paddingTop: "190px",
       }}
     ></Box>

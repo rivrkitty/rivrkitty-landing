@@ -17,7 +17,7 @@ export default createTheme({
   palette: {
     mode: "dark",
     primary: {
-      main: "#60C0C2",
+      main: "#8D3AA5",
       contrastText: "white",
     },
     secondary: {
@@ -34,18 +34,41 @@ export default createTheme({
     },
   },
   shape: {
-    borderRadius: 12,
+    borderRadius: 4,
   },
   typography: {
     h1: {
+      color: "white",
       fontFamily: "Roboto Mono",
-      fontStyle: "Bold",
       fontWeight: "700",
       fontSize: "50px",
       lineHeight: "66px",
     },
+    h2: {
+      color: "white",
+      fontFamily: "Roboto Mono",
+      fontWeight: "700",
+      fontSize: "40px",
+    },
+    subtitle2: {
+      color: "white",
+      fontFamily: "Nunito",
+      fontWeight: "700",
+      fontSize: "18px",
+    },
+    body1: {
+      color: "white",
+      fontFamily: "Nunito",
+      fontSize: "16px",
+    },
     caption: {
       color: "#979E9C",
+    },
+    button: {
+      fontFamily: "Poppins",
+      fontSize: 14,
+      fontWeight: 500,
+      textTransform: "none",
     },
   },
 });

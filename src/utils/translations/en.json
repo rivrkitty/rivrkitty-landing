@@ -1,6 +1,5 @@
 {
   "translation": {
-    "max": "max",
     "menuFarms": "Farms",
     "menuNFTs": "NFTs (coming soon)",
     "launchApp": "Launch App",
@@ -11,6 +10,10 @@
     "menuTelegramSecondaryText": "Join Our Telegram Channel",
     "menuTwitterSecondaryText": "Follow us on Twitter",
     "menuGithubSecondaryText": "Check our code on Github",
-    "menuDocumentationSecondaryText": "New to RivrKitty? Check out our documentation"
+    "menuDocumentationSecondaryText": "New to RivrKitty? Check out our documentation",
+    "nftTitle": "More than an NFT",
+    "nftSubtitle": "Our aim is to redefine gaming + DeFi by unlocking the true potential of NFTs.",
+    "nftBody": "A key component of RivrKitty is launching a DeFi-centric and NFT based ecosystem. In the KittyVerse, members can escape reality, own cool unique swag and interact with others in a fun and humourous way and earn $RKitty along the way.",
+    "nftReadMore": "Read More"
   }
 }

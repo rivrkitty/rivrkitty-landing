@@ -4,6 +4,8 @@ import { makeStyles } from "@mui/styles";
 import "@fontsource/roboto-mono";
 import { useMediaQuery } from "react-responsive";
 import Typography from "@mui/material/Typography";
+import { defaultContentPadding } from "../../utils/theme";
+import Box from "@mui/system/Box";
 
 const useStyles = makeStyles((theme) => ({
   bannerText: {
@@ -40,8 +42,6 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     display: "flex",
     maxWidth: "612px",
-    paddingLeft: "5%",
-    paddingRight: "5%",
     flexDirection: "column",
   },
   moonRiverText: {
@@ -59,7 +59,7 @@ export default function LandingBanner() {
         classes.desktopRootCss
       }`}
     >
-      <div className={classes.bannerWrapper}>
+      <Box className={classes.bannerWrapper} sx={{ ...defaultContentPadding }}>
         <Typography
           variant="h1"
           className={`${isTabletOrMobile && classes.mobileBannerText} ${
@@ -71,7 +71,7 @@ export default function LandingBanner() {
         <div className={classes.moonRiverText}>
           Moonriver Contract: 0xC2b0435276139731d82Ae2Fa8928c9b9De0761c1
         </div>
-      </div>
+      </Box>
     </div>
   );
 }
