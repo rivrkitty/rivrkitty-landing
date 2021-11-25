@@ -2,8 +2,7 @@ import Divider from "@mui/material/Divider";
 import { Box } from "@mui/system";
 import React from "react";
 import Header from "./Header";
-import LandingBanner from "../common/components/HeaderComponents/LandingBanner";
-import LandingFarmInfo from "../common/components/HeaderComponents/LandingFarmInfo";
+import LandingBanner from "../components/LandingBanner";
 
 export default function Main() {
   return (
@@ -28,9 +27,9 @@ export default function Main() {
           width: "100%",
         }}
       />
-      <Box sx={{ flex: 1, overflowY: "scroll" }}>TODO content</Box>
+      <Box sx={{ flex: 1, overflowY: "scroll" }}>
       <LandingBanner />
-      <LandingFarmInfo />
+      </Box>
     </Box>
   );
 }
