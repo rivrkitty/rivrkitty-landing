@@ -5,6 +5,7 @@ import "@fontsource/roboto-mono";
 import { useMediaQuery } from "react-responsive";
 import Typography from "@mui/material/Typography";
 import { defaultContentPadding } from "../../utils/theme";
+import FLOATINGKITTY from "../../assets/token/FLOATINGKITTY.png";
 import Box from "@mui/system/Box";
 
 const useStyles = makeStyles((theme) => ({
@@ -31,7 +32,6 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     minHeight: "1500px",
     display: "flex",
-    flexDirection: "column",
     // justifyContent: "center",
   },
   mobileRootCss: {
@@ -43,6 +43,18 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     maxWidth: "612px",
     flexDirection: "column",
+  },
+  floatingRkittyAnim: {
+    height: "800px",
+    display: "flex",
+    width: "40%",
+    marginLeft: "auto",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    animationName: "floating",
+    animationDuration: "3s",
+    animationIterationCount: "infinite",
+    animationTimingFunction: "ease-in-out"
   },
   moonRiverText: {
     color: "#EEAB47",
@@ -71,6 +83,12 @@ export default function LandingBanner() {
         <div className={classes.moonRiverText}>
           Moonriver Contract: 0xC2b0435276139731d82Ae2Fa8928c9b9De0761c1
         </div>
+      </Box>
+      <Box className={classes.floatingRkittyAnim}>
+        <img style={{
+          height: "340px"
+        }}
+        src={FLOATINGKITTY} alt="Floating RivrKitty" />
       </Box>
     </div>
   );
