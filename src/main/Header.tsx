@@ -10,7 +10,7 @@ import WALLET from "../assets/token/WALLET.png";
 import { defaultContentPadding, defaultHeaderBg } from "../utils/theme";
 import FancyButton from "../common/components/FancyButton";
 import { useTranslation } from "react-i18next";
-import MoreMenu from "../common/components/MoreMenu";
+import MoreMenu from "../common/components/HeaderComponents/MoreMenu";
 import MobileMenu from "../common/components/HeaderComponents/MobileMenu";
 
 const useStyles = makeStyles({
@@ -31,8 +31,8 @@ const useStyles = makeStyles({
     marginRight: 16,
   },
   walletIcon: {
-    verticalAlign: "middle"
-  }
+    verticalAlign: "middle",
+  },
 });
 
 export default function Header(props: { className?: string }) {
@@ -54,8 +54,11 @@ export default function Header(props: { className?: string }) {
         flexFlow: "row wrap",
         alignItems: "center",
         height: 64,
-        ...defaultHeaderBg,
-        ...defaultContentPadding,
+        position: "fixed",
+        width: "90%",
+        paddingLeft: "5%",
+        paddingRight: "5%",
+        backgroundColor: "#15152B",
       }}
     >
       <Link href={"https://rivrkitty.com"}>

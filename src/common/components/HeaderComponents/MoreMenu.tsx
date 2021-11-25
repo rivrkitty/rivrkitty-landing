@@ -1,10 +1,9 @@
 import React from "react";
 import Avatar from "@mui/material/Avatar";
-import { getSingleAssetSrc } from "../../utils/getSingleAssetSrc";
+import { getSingleAssetSrc } from "../../../utils/getSingleAssetSrc";
 import Popover from "@mui/material/Popover";
 import Button from "@mui/material/Button";
 import MenuList from "./MenuList";
-
 
 export default function MoreMenu() {
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(
@@ -32,7 +31,7 @@ export default function MoreMenu() {
       >
         <>
           <Avatar
-            alt="rkittyImg"
+            alt="more menu"
             src={getSingleAssetSrc("3DOTS").default}
             style={{
               width: "24px",
