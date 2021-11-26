@@ -1,11 +1,13 @@
 import Divider from "@mui/material/Divider";
 import { Box } from "@mui/system";
-import React from "react";
+
 import Header from "./Header";
 import LandingBanner from "./components/LandingBanner";
 import LandingFarmInfo from "./components/LandingFarmInfo";
 import NFTPreview from "./components/NFTPreview";
 import OurStory from "./components/OurStory";
+import Tokenomics from "./components/Tokenomics";
+import Roadmap from "./components/Roadmap";
 
 export default function Main() {
   return (
@@ -44,6 +46,8 @@ export default function Main() {
         <LandingFarmInfo />
         <NFTPreview />
         <OurStory />
+        <Tokenomics />
+        <Roadmap />
       </Box>
     </Box>
   );

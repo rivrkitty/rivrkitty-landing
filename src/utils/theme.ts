@@ -13,6 +13,16 @@ export const defaultContentPadding = {
   },
 };
 
+export const blueGradient = {
+  background:
+    "linear-gradient(180deg, rgba(106,188,189,1) 0%, rgba(255,255,255,1) 100%)",
+};
+
+export const absoluteCenterVertically = {
+  top: "50%",
+  transform: "translate(0%, -50%)",
+};
+
 export default createTheme({
   palette: {
     mode: "dark",
@@ -21,11 +31,11 @@ export default createTheme({
       contrastText: "white",
     },
     secondary: {
-      main: "rgba(255, 255, 255, 0.1)",
+      main: "#EA8478",
       contrastText: "white",
     },
     info: {
-      main: "#EEAB47",
+      main: "#09060B",
       contrastText: "white",
     },
     background: {
@@ -48,7 +58,25 @@ export default createTheme({
       color: "white",
       fontFamily: "Roboto Mono",
       fontWeight: "700",
+      fontSize: "46px",
+    },
+    h3: {
+      color: "white",
+      fontFamily: "Roboto Mono",
+      fontWeight: "700",
       fontSize: "40px",
+    },
+    h4: {
+      color: "white",
+      fontFamily: "Roboto Mono",
+      fontWeight: "700",
+      fontSize: "34px",
+    },
+    subtitle1: {
+      color: "white",
+      fontFamily: "Nunito",
+      fontWeight: "700",
+      fontSize: "26px",
     },
     subtitle2: {
       color: "white",
@@ -60,6 +88,11 @@ export default createTheme({
       color: "white",
       fontFamily: "Nunito",
       fontSize: "16px",
+    },
+    body2: {
+      color: "#09060B",
+      fontFamily: "Nunito",
+      fontSize: "14px",
     },
     caption: {
       color: "#979E9C",
