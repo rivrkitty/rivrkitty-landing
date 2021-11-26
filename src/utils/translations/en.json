@@ -3,6 +3,8 @@
     "menuFarms": "Farms",
     "menuNFTs": "NFTs (coming soon)",
     "launchApp": "Launch App",
+    "progressComplete": "COMPLETE",
+    "progressLoading": "LOADING",
     "menuTelegram": "Telegram",
     "menuTwitter": "Twitter",
     "menuGithub": "Github",
@@ -35,6 +37,23 @@
     "tokenomicsAudit": "Techrate Audit",
     "tokenomicsVestingTitle": "Vested Team tokens",
     "tokenomicsVestingText": "The project launched with 3% team tokens are locked for 3 months with vesting.",
-    "tokenomicsLink": "Link {{ number }}"
+    "tokenomicsLink": "Link {{ number }}",
+    "roadmap": "Road Map",
+    "roadmapPhase1": "PHASE-1",
+    "roadmapPhase1Item1": "$RKITTY Fair Launch",
+    "roadmapPhase1Item2": "Farming Contract Audit",
+    "roadmapPhase1Item3": "Incentivised LP Partnership",
+    "roadmapPhase1Item4": "$PAWS Farm Launch",
+    "roadmapPhase1Item5": "CoinGecko Listing",
+    "roadmapPhase2": "PHASE-2",
+    "roadmapPhase2Item1": "Website Redesign",
+    "roadmapPhase2Item2": "CoinMarketCap Listing",
+    "roadmapPhase2Item3": "RivrKitty NFTs: Genesis Collection",
+    "roadmapPhase2Item4": "NFT Gamified farming launch",
+    "roadmapPhase3": "PHASE-3",
+    "roadmapPhase3Item1": "NFT Marketplace",
+    "roadmapPhase3Item2": "NFT Mini Game Launch",
+    "roadmapPhase3Item3": "DAO Launch",
+    "roadmapPhase3Item4": "KittyVerse: Full Launch"
   }
 }
