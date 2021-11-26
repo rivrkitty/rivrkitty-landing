@@ -22,45 +22,41 @@ const useStyles = makeStyles((theme) => ({
     color: "#fff",
   },
   desktopRootCss: {
-    backgroundImage: `linear-gradient(180deg, rgba(18, 26, 40, 0) 36.67%, #121A28 59.69%) , url(${
+    backgroundImage: `linear-gradient(180deg, rgba(18, 26, 40, 0) -22.67%, #121A28 78.69%), url(${
       getSingleAssetSrc("LANDINGIMAGE").default
     })`,
     backgroundRepeat: "no-repeat",
     width: "100%",
-    minHeight: "1500px",
     display: "flex",
-    flexDirection: "column",
   },
   mobileRootCss: {
+    backgroundImage: `linear-gradient(180deg, rgba(18, 26, 40, 0) -11.67%, #121A28 72.69%), url(${
+      getSingleAssetSrc("LANDINGIMAGE").default
+    })`,
     backgroundPositionX: "right",
+    flexDirection: "column-reverse",
   },
   bannerWrapper: {
-    height: "800px",
-    justifyContent: "center",
+    justifyContent: "end",
     display: "flex",
     maxWidth: "612px",
     flexDirection: "column",
-  },
-  floatingRkittyAnim: {
-    height: "800px",
-    display: "flex",
-    width: "40%",
-    marginLeft: "auto",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    animationName: "floating",
-    animationDuration: "3s",
-    animationIterationCount: "infinite",
-    animationTimingFunction: "ease-in-out",
-  },
-  moonRiverText: {
-    color: "#EEAB47",
   },
   mobileBannerWrapper: {
     padding: "0 5%",
     textAlign: "center",
     margin: "0 auto",
     justifyContent: "end",
+  },
+  floatingRkittyAnim: {
+    display: "flex",
+    margin: "0 auto",
+    marginTop: "300px",
+    justifyContent: "flex-start",
+    animationName: "floating",
+    animationDuration: "3s",
+    animationIterationCount: "infinite",
+    animationTimingFunction: "ease-in-out",
   },
 }));
 
@@ -104,7 +100,14 @@ export default function LandingBanner() {
             sx={{
               marginTop: 2,
               marginRight: 2,
-              width: { xs: "100%", md: "inherit" },
+              paddingLeft: {
+                xs: 7,
+                md: "inherit",
+              },
+              paddingRight: {
+                xs: 7,
+                md: "inherit",
+              },
             }}
           >
             $BUY
@@ -115,8 +118,12 @@ export default function LandingBanner() {
               marginTop: 2,
               marginRight: 2,
               background: "#9969A6",
-              width: {
-                xs: "100%",
+              paddingLeft: {
+                xs: 7,
+                md: "inherit",
+              },
+              paddingRight: {
+                xs: 7,
                 md: "inherit",
               },
             }}
@@ -125,7 +132,22 @@ export default function LandingBanner() {
           </Button>
         </div>
       </Box>
-      <Box className={classes.floatingRkittyAnim}>
+      <Box
+        className={classes.floatingRkittyAnim}
+        sx={{
+          alignItems: {
+            md: "end",
+            xs: "end",
+          },
+          width: {
+            md: "40%",
+          },
+          height: {
+            // xs:"750px",
+            // md: "600px"
+          },
+        }}
+      >
         <img
           style={{
             height: "340px",
