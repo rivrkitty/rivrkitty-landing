@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MediaQuery from "react-responsive";
 import makeStyles from "@mui/styles/makeStyles";
 import Link from "@mui/material/Link";
-import Box from "@mui/material/Box";
+import Box, { BoxProps } from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import logo from "../assets/logo.png";
 import RKITTY from "../assets/RKITTY.png";
@@ -11,6 +11,7 @@ import FancyButton from "../common/components/FancyButton";
 import { useTranslation } from "react-i18next";
 import MoreMenu from "../common/components/HeaderComponents/MoreMenu";
 import MobileMenu from "../common/components/HeaderComponents/MobileMenu";
+import { defaultContentPadding } from "../utils/theme";
 
 const useStyles = makeStyles({
   container: {
@@ -35,7 +36,9 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Header(props: { className?: string }) {
+export default function Header(props: BoxProps) {
+  const { sx, ...other } = props;
+
   const classes = useStyles();
   const { t } = useTranslation();
 
@@ -47,19 +50,16 @@ export default function Header(props: { className?: string }) {
 
   return (
     <Box
-      className={props.className}
       sx={{
+        ...defaultContentPadding,
         display: "flex",
         flexDirection: "row",
         flexFlow: "row wrap",
         alignItems: "center",
-        height: 64,
-        position: "fixed",
-        width: "90%",
-        paddingLeft: "5%",
-        paddingRight: "5%",
-        backgroundColor: "#15152B",
+        minHeight: 64,
+        ...sx,
       }}
+      {...other}
     >
       <Link href={"https://rivrkitty.com"}>
         <img className={classes.logo} src={RKITTY} alt="RivrKitty" />

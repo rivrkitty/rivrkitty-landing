@@ -8,11 +8,13 @@
     "menuTelegram": "Telegram",
     "menuTwitter": "Twitter",
     "menuGithub": "Github",
+    "menuMedium": "Medium",
     "menuDocumentation": "Documentation",
     "menuTelegramSecondaryText": "Join Our Telegram Channel",
     "menuTwitterSecondaryText": "Follow us on Twitter",
     "menuGithubSecondaryText": "Check our code on Github",
     "menuDocumentationSecondaryText": "New to RivrKitty? Check out our documentation",
+    "menuMediumSecondaryText": "Get our updates",
     "nftTitle": "More than an NFT",
     "nftSubtitle": "Our aim is to redefine gaming + DeFi by unlocking the true potential of NFTs.",
     "nftBody": "A key component of RivrKitty is launching a DeFi-centric and NFT based ecosystem. In the KittyVerse, members can escape reality, own cool unique swag and interact with others in a fun and humourous way and earn $RKitty along the way.",
@@ -54,6 +56,9 @@
     "roadmapPhase3Item1": "NFT Marketplace",
     "roadmapPhase3Item2": "NFT Mini Game Launch",
     "roadmapPhase3Item3": "DAO Launch",
-    "roadmapPhase3Item4": "KittyVerse: Full Launch"
+    "roadmapPhase3Item4": "KittyVerse: Full Launch",
+    "contact": "How to Buy $RKitty",
+    "contactAddress": "Moonriver Contract Address",
+    "footer": "Copyright © 2021 RivrKitty | Powered by RivrKitty"
   }
 }
