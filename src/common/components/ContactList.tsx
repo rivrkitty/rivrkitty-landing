@@ -15,7 +15,7 @@ export default function ContactList() {
   return (
     <List sx={{ width: "100%", bgcolor: "background.paper" }}>
       {CONTACT_ITEMS.map((item) => (
-        <ListItem sx={{ pt: 0, pb: 0 }}>
+        <ListItem key={item.primaryText} sx={{ pt: 0, pb: 0 }}>
           <ListItemButton
             component="a"
             target="_blank"

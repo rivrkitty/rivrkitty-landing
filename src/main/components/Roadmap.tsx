@@ -7,6 +7,7 @@ import Progress from "../../common/components/Progress";
 import { blueGradient, defaultContentPadding } from "../../utils/theme";
 import CheckIcon from "../../assets/check.png";
 import EmptyCheckIcon from "../../assets/emptyCheck.png";
+import EntryAnimation from "../../common/components/EntryAnimation";
 
 type PhaseItemType = {
   nameKey: string;
@@ -135,24 +136,27 @@ export default function Roadmap() {
         mt: 8,
       }}
     >
-      <Typography variant="h2" sx={{ textAlign: "center" }}>
-        {t("roadmap")}
-      </Typography>
-      <Grid
-        container
-        spacing={10}
-        sx={{
-          mt: 3,
-          mb: 0,
-          ...blueGradient,
-          ...defaultContentPadding,
-          pb: 6,
-        }}
-      >
-        {PHASES.map((p) => (
-          <Phase key={p.nameKey} phase={p} />
-        ))}
-      </Grid>
+      <EntryAnimation>
+        <Typography variant="h2" sx={{ textAlign: "center" }}>
+          {t("roadmap")}
+        </Typography>
+      </EntryAnimation>
+      <Box sx={{ ...blueGradient, ...defaultContentPadding, mt: 3, mb: 0 }}>
+        <EntryAnimation>
+          <Grid
+            container
+            spacing={10}
+            sx={{
+              pt: 6,
+              pb: 6,
+            }}
+          >
+            {PHASES.map((p) => (
+              <Phase key={p.nameKey} phase={p} />
+            ))}
+          </Grid>
+        </EntryAnimation>
+      </Box>
     </Box>
   );
 }

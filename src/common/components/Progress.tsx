@@ -2,12 +2,27 @@ import { Typography } from "@mui/material";
 import Box, { BoxProps } from "@mui/material/Box";
 import { t } from "i18next";
 import React from "react";
+import { useInView } from "react-intersection-observer";
 import { absoluteCenterVertically } from "../../utils/theme";
 
 export default function Progress(props: { percent: number } & BoxProps) {
   const { percent, sx, ...other } = props;
+
+  const [value, setValue] = React.useState(0);
+
+  const { ref, inView } = useInView();
+
+  React.useEffect(() => {
+    if (inView) {
+      setValue(percent);
+    } else {
+      setValue(0);
+    }
+  }, [inView, percent, setValue]);
+
   return (
     <Box
+      ref={ref}
       {...other}
       sx={{
         position: "relative",
@@ -19,7 +34,14 @@ export default function Progress(props: { percent: number } & BoxProps) {
         ...(sx || {}),
       }}
     >
-      <Box sx={{ width: `${percent}%`, backgroundColor: "secondary.main" }} />
+      <Box
+        sx={{
+          width: `${value}%`,
+          backgroundColor: "secondary.main",
+          transition: "0.5s ease",
+          transitionDelay: "0.2s",
+        }}
+      />
       {percent === 100 && (
         <>
           <Typography

@@ -1,5 +1,5 @@
+import React from "react";
 import { Box } from "@mui/system";
-
 import Header from "./Header";
 import LandingBanner from "./components/LandingBanner";
 import LandingFarmInfo from "./components/LandingFarmInfo";
@@ -25,7 +25,7 @@ export default function Main() {
         alignItems: "center",
       }}
     >
-      <SectionBox sx={{ position: "absolute", top: 0, width: "100%" }}>
+      <SectionBox sx={{ position: "absolute", top: 0 }}>
         <Header />
       </SectionBox>
       <Separator sx={{ position: "absolute", top: "64px" }} />
@@ -39,7 +39,7 @@ export default function Main() {
         <Contact />
       </SectionBox>
       <Separator />
-      <SectionBox sx={{ width: "100%" }}>
+      <SectionBox>
         <Footer />
       </SectionBox>
     </Box>
