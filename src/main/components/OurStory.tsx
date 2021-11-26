@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 import { Box } from "@mui/system";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { defaultContentPadding } from "../../utils/theme";
+import { blueGradient, defaultContentPadding } from "../../utils/theme";
 import Story from "../../assets/Story.png";
 import Hidden from "@mui/material/Hidden";
 
@@ -17,8 +17,7 @@ export default function OurStory() {
         sx={{
           clipPath:
             "polygon(0% 50px, 100% 0%, 100% 100%, 0% calc(100% - 50px), 0% 50px)",
-          background:
-            "linear-gradient(180deg, rgba(106,188,189,1) 0%, rgba(255,255,255,1) 100%)",
+          ...blueGradient,
           marginTop: {
             xs: "180px",
             md: "0px",
@@ -40,7 +39,7 @@ export default function OurStory() {
             md={7}
             sx={{ display: "flex", flexDirection: "column" }}
           >
-            <Typography variant="h2">{t("storyTitle")}</Typography>
+            <Typography variant="h3">{t("storyTitle")}</Typography>
             <Typography
               variant="body1"
               sx={{ marginTop: 2, marginBottom: 2, color: "black" }}

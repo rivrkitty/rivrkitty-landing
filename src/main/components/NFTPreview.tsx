@@ -11,7 +11,7 @@ function TitleText() {
 
   return (
     <>
-      <Typography variant="h2">{t("nftTitle")}</Typography>
+      <Typography variant="h3">{t("nftTitle")}</Typography>
       <Typography variant="subtitle2" sx={{ marginTop: 3 }}>
         {t("nftSubtitle")}
       </Typography>
