@@ -2,7 +2,6 @@ import React from "react";
 import { Box } from "@mui/system";
 import Header from "./Header";
 import LandingBanner from "./components/LandingBanner";
-import LandingFarmInfo from "./components/LandingFarmInfo";
 import NFTPreview from "./components/NFTPreview";
 import OurStory from "./components/OurStory";
 import Tokenomics from "./components/Tokenomics";
@@ -31,7 +30,6 @@ export default function Main() {
       <Separator sx={{ position: "absolute", top: "64px" }} />
       <SectionBox>
         <LandingBanner />
-        <LandingFarmInfo />
         <NFTPreview />
         <OurStory />
         <Tokenomics />
