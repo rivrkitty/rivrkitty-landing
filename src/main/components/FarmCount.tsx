@@ -19,6 +19,7 @@ export default function FarmCount() {
       sx={{
         textAlign: "center",
         marginTop: 6,
+        paddingBottom: 7,
       }}
     >
       <Typography

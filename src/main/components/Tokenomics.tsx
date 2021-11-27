@@ -10,6 +10,7 @@ import SafeIcon from "../../assets/safe.png";
 import ShiftTeamIcon from "../../assets/shiftTeam.png";
 import { defaultContentPadding } from "../../utils/theme";
 import EntryAnimation from "../../common/components/EntryAnimation";
+import CountUp from "react-countup";
 
 function InfoLine(props: { title: string; subtitle: string }) {
   const { title, subtitle } = props;
@@ -34,7 +35,7 @@ function ValueLine(props: {
   subtitle: string;
   animated?: boolean;
 }) {
-  const { value, subtitle } = props;
+  const { value, subtitle, animated } = props;
 
   return (
     <Box
@@ -45,7 +46,19 @@ function ValueLine(props: {
         mt: 1,
       }}
     >
-      <Typography variant="h4">{value}</Typography>
+      <Typography variant="h4">
+        {animated ? (
+          <CountUp
+            start={0}
+            end={parseInt(value)}
+            duration={2}
+            separator=","
+            decimals={0}
+          />
+        ) : (
+          value
+        )}
+      </Typography>
       <Typography variant="body1" color="secondary">
         {subtitle}
       </Typography>
@@ -156,7 +169,7 @@ export default function Tokenomics() {
           }}
         >
           <ValueLine
-            value="1,000,000,000,000"
+            value="1000000000000"
             subtitle={t("tokenomicsTokensCount")}
             animated
           />

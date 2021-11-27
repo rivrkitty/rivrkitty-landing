@@ -26,9 +26,12 @@ export default function Contact() {
           md={7}
           sx={{ display: "flex", alignItems: "center" }}
         >
-          <Box component="video" sx={{ width: "100%" }} controls>
-            <source src="videos/howToVideo.m4v" type="video/mp4" />
-          </Box>
+          <Box
+            component="iframe"
+            title="How to Buy RivrKitty ($RKITTY)"
+            sx={{ width: "100%", height: "100%", border: 0, minHeight: 360 }}
+            src="https://www.youtube.com/embed/g1KfbIcWPXc"
+          />
         </Grid>
         <Grid item xs={12} md={5}>
           <Typography variant="subtitle1" sx={{ ml: 2 }}>

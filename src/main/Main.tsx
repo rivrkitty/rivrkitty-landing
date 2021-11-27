@@ -10,6 +10,7 @@ import Contact from "./components/Contact";
 import Separator from "../common/components/Separator";
 import Footer from "./components/Footer";
 import SectionBox from "../common/components/SectionBox";
+import IntroVideo from "./components/IntroVideo";
 
 export default function Main() {
   return (
@@ -30,6 +31,7 @@ export default function Main() {
       <Separator sx={{ position: "absolute", top: "64px" }} />
       <SectionBox>
         <LandingBanner />
+        <IntroVideo />
         <NFTPreview />
         <OurStory />
         <Tokenomics />

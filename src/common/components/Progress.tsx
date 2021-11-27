@@ -38,7 +38,7 @@ export default function Progress(props: { percent: number } & BoxProps) {
         sx={{
           width: `${value}%`,
           backgroundColor: "secondary.main",
-          transition: "0.5s ease",
+          transition: "1.5s ease",
           transitionDelay: "0.2s",
         }}
       />
