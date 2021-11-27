@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage: `linear-gradient(180deg, rgba(18, 26, 40, 0) 56.33%, #121A28 100.69%), url(${
       getSingleAssetSrc("LANDINGIMAGE").default
     })`,
+    backgroundPositionX: "center",
     backgroundRepeat: "no-repeat",
     width: "100%",
     display: "flex",
@@ -35,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage: `linear-gradient(180deg, rgba(18, 26, 40, 0) -11.67%, #121A28 72.69%), url(${
       getSingleAssetSrc("LANDINGIMAGE").default
     })`,
-    backgroundPositionX: "right",
+    backgroundPositionX: "62%",
     flexDirection: "column-reverse",
   },
   bannerWrapper: {

@@ -29,8 +29,8 @@ export default function Main() {
         <Header />
       </SectionBox>
       <Separator sx={{ position: "absolute", top: "64px" }} />
+      <LandingBanner />
       <SectionBox>
-        <LandingBanner />
         <IntroVideo />
         <NFTPreview />
         <OurStory />
