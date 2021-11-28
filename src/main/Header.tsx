@@ -55,6 +55,7 @@ export default function Header(props: { className?: string }) {
         alignItems: "center",
         height: 64,
         position: "fixed",
+        zIndex: "1000",
         width: "90%",
         paddingLeft: "5%",
         paddingRight: "5%",
