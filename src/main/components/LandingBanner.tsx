@@ -57,14 +57,15 @@ const useStyles = makeStyles((theme) => ({
   floatingRkittyAnim: {
     display: "flex",
     margin: "0 auto",
-    marginTop: "275px",
-    marginBottom: "25px",
+    marginTop: "190px",
+    marginBottom: "90px",
     justifyContent: "flex-start",
     animationName: "floating",
-    animation: "2.6s ease-out 0s infinite normal none running"
+    animation: "3.5s ease-out 0s infinite normal none running"
   },
   mobileFloatingRkitty: {
-    marginBottom: "55px"
+    marginBottom: "140px",
+    marginTop: "150px"
   }
 }));
 
@@ -89,7 +90,7 @@ export default function LandingBanner() {
               : {
                   width: "100%",
                   display: "flex",
-                  minHeight: "900px",
+                  minHeight: "901px",
                 }
           }
         >
