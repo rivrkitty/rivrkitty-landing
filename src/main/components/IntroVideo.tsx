@@ -6,6 +6,7 @@ import React from "react";
 import { useInView } from "react-intersection-observer";
 import { defaultContentPadding } from "../../utils/theme";
 import EntryAnimation from "../../common/components/EntryAnimation";
+import SectionBox from "../../common/components/SectionBox";
 
 const iconSx = {
   fontSize: 80,
@@ -49,64 +50,100 @@ export default function IntroVideo() {
     <Box
       ref={ref}
       sx={{
-        ...defaultContentPadding,
         display: "flex",
         justifyContent: "center",
+        width: "100%",
+        backgroundColor: "black",
       }}
     >
-      <EntryAnimation>
-        <Box sx={{ position: "relative" }}>
-          <Box
-            ref={videoRef}
-            component="video"
-            sx={{ maxWidth: "100%", maxHeight: 600 }}
-            loop
-            muted
-          >
-            <source src="videos/intro.m4v" type="video/mp4" />
-          </Box>
-          <Box
-            sx={{
-              position: "absolute",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              backgroundColor: isHover ? "#000000aa" : "#00000000",
-              transition: "background-color 0.5s",
-            }}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <IconButton
-              size="large"
-              sx={{
-                marginRight: 1,
-                opacity: isHover ? "100%" : "0%",
-                transition: "opacity 0.5s",
-              }}
-            ></IconButton>
-            <IconButton
-              size="large"
-              sx={{
-                marginLeft: 1,
-                opacity: isHover ? "100%" : "0%",
-                transition: "opacity 0.5s",
-              }}
-              onClick={handleVolumeClick}
+      <SectionBox
+        sx={{
+          ...defaultContentPadding,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          maxHeight: 500,
+          overflow: "hidden",
+        }}
+      >
+        <EntryAnimation>
+          <Box sx={{ position: "relative" }}>
+            <Box
+              ref={videoRef}
+              component="video"
+              sx={{ maxWidth: "100%" }}
+              loop
+              muted
             >
-              {isMuted ? (
-                <VolumeOffIcon sx={iconSx} />
-              ) : (
-                <VolumeUpIcon sx={iconSx} />
-              )}
-            </IconButton>
+              <source src="videos/intro.m4v" type="video/mp4" />
+            </Box>
+            <Box
+              sx={{
+                position: "absolute",
+                top: 0,
+                bottom: 0,
+                left: 0,
+                width: 40,
+                backgroundColor: "red",
+                background:
+                  "linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%)",
+              }}
+            />
+            <Box
+              sx={{
+                position: "absolute",
+                top: 0,
+                bottom: 0,
+                right: 0,
+                width: 40,
+                backgroundColor: "red",
+                background:
+                  "linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%)",
+              }}
+            />
+            <Box
+              sx={{
+                position: "absolute",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                backgroundColor: isHover ? "#000000aa" : "#00000000",
+                transition: "background-color 0.5s",
+              }}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <IconButton
+                size="large"
+                sx={{
+                  marginRight: 1,
+                  opacity: isHover ? "100%" : "0%",
+                  transition: "opacity 0.5s",
+                }}
+              ></IconButton>
+              <IconButton
+                size="large"
+                sx={{
+                  marginLeft: 1,
+                  opacity: isHover ? "100%" : "0%",
+                  transition: "opacity 0.5s",
+                }}
+                onClick={handleVolumeClick}
+              >
+                {isMuted ? (
+                  <VolumeOffIcon sx={iconSx} />
+                ) : (
+                  <VolumeUpIcon sx={iconSx} />
+                )}
+              </IconButton>
+            </Box>
           </Box>
-        </Box>
-      </EntryAnimation>
+        </EntryAnimation>
+      </SectionBox>
     </Box>
   );
 }

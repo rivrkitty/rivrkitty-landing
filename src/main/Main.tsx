@@ -30,8 +30,8 @@ export default function Main() {
       </SectionBox>
       <Separator sx={{ position: "absolute", top: "64px" }} />
       <LandingBanner />
+      <IntroVideo />
       <SectionBox>
-        <IntroVideo />
         <NFTPreview />
       </SectionBox>
       <OurStory />
