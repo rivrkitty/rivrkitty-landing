@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   mobileRootCss: {
-    backgroundImage: `linear-gradient(180deg, rgba(18, 26, 40, 0) -11.67%, #121A28 72.69%), url(${
+    backgroundImage: `linear-gradient(180deg, rgba(18, 26, 40, 0) -100.67px, #121A28 900.69px), url(${
       getSingleAssetSrc("LANDINGIMAGE").default
     })`,
     backgroundPositionX: "62%",
@@ -85,6 +85,7 @@ export default function LandingBanner() {
   const ButtonSx = {
     marginTop: 2,
     marginRight: 2,
+    height: "38px",
     paddingLeft: {
       xs: 7,
       md: "30px",
@@ -145,26 +146,35 @@ export default function LandingBanner() {
               Moonriver Contract: 0xC2b0435276139731d82Ae2Fa8928c9b9De0761c1
             </Box>
             <div>
-              <Button
-                variant="contained"
-                sx={ButtonSx}
-                href={
-                  "https://www.huckleberry.finance/#/swap?outputCurrency=0xC2b0435276139731d82Ae2Fa8928c9b9De0761c1"
-                }
-                target="_blank"
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: { xs: "column", md: "row" },
+                  alignItems: { xs: "center" },
+                }}
               >
-                $BUY
-              </Button>
-              <Button
-                variant="contained"
-                sx={ButtonSx}
-                href={
-                  "https://dexscreener.com/moonriver/0xfdbc58805abbc36cacd7e1af65e7646665d61f08"
-                }
-                target="_blank"
-              >
-                CHART
-              </Button>
+                <Button
+                  variant="contained"
+                  sx={{ ...ButtonSx, width: { xs: "280px", md: "inherit" } }}
+                  href={
+                    "https://www.huckleberry.finance/#/swap?outputCurrency=0xC2b0435276139731d82Ae2Fa8928c9b9De0761c1"
+                  }
+                  target="_blank"
+                >
+                  $BUY
+                </Button>
+                <Button
+                  variant="contained"
+                  sx={{ ...ButtonSx, width: { xs: "280px", md: "inherit" } }}
+                  href={
+                    "https://dexscreener.com/moonriver/0xfdbc58805abbc36cacd7e1af65e7646665d61f08"
+                  }
+                  target="_blank"
+                >
+                  CHART
+                </Button>
+              </Box>
+
               <TextButtonsWrapper>
                 <Button
                   variant="text"
