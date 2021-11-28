@@ -51,13 +51,14 @@ const useStyles = makeStyles((theme) => ({
   floatingRkittyAnim: {
     display: "flex",
     margin: "0 auto",
-    marginTop: "300px",
+    marginTop: "250px",
     justifyContent: "flex-start",
     animationName: "floating",
-    animationDuration: "3s",
-    animationIterationCount: "infinite",
-    animationTimingFunction: "ease-in-out",
+    animation: "2.6s ease-out 0s infinite normal none running"
   },
+  mobileFloatingRkitty: {
+    marginBottom: "55px"
+  }
 }));
 
 export default function LandingBanner() {
@@ -133,7 +134,7 @@ export default function LandingBanner() {
         </div>
       </Box>
       <Box
-        className={classes.floatingRkittyAnim}
+        className={`${isTabletOrMobile && classes.mobileFloatingRkitty} ${classes.floatingRkittyAnim}`}
         sx={{
           alignItems: {
             md: "end",
