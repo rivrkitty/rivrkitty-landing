@@ -1,13 +1,16 @@
-import Divider from "@mui/material/Divider";
+import React from "react";
 import { Box } from "@mui/system";
-
 import Header from "./Header";
 import LandingBanner from "./components/LandingBanner";
-import LandingFarmInfo from "./components/LandingFarmInfo";
 import NFTPreview from "./components/NFTPreview";
 import OurStory from "./components/OurStory";
 import Tokenomics from "./components/Tokenomics";
 import Roadmap from "./components/Roadmap";
+import Contact from "./components/Contact";
+import Separator from "../common/components/Separator";
+import Footer from "./components/Footer";
+import SectionBox from "../common/components/SectionBox";
+import IntroVideo from "./components/IntroVideo";
 
 export default function Main() {
   return (
@@ -18,37 +21,31 @@ export default function Main() {
         height: "100%",
         display: "flex",
         flexDirection: "column",
-        backgroundColor: "#121A28",
+        overflowY: "scroll",
+        alignItems: "center",
       }}
     >
-      <Header />
-      <Divider
-        sx={{
-          zIndex: 1,
-          height: "2px",
-          background:
-            "linear-gradient(90deg, rgba(234,132,120,1) 0%, rgba(95,176,180,1) 100%)",
-          position: "fixed",
-          top: "64px",
-          width: "100%",
-        }}
-      />
-      <Box
-        sx={{
-          flex: 1,
-          overflowY: "scroll",
-          maxWidth: 1440,
-          width: "100%",
-          alignSelf: "center",
-        }}
-      >
-        <LandingBanner />
-        <LandingFarmInfo />
+      <SectionBox sx={{ position: "absolute", top: 0 }}>
+        <Header />
+      </SectionBox>
+      <Separator sx={{ position: "absolute", top: "64px" }} />
+      <LandingBanner />
+      <SectionBox>
+        <IntroVideo />
         <NFTPreview />
-        <OurStory />
+      </SectionBox>
+      <OurStory />
+      <SectionBox>
         <Tokenomics />
-        <Roadmap />
-      </Box>
+      </SectionBox>
+      <Roadmap />
+      <SectionBox>
+        <Contact />
+      </SectionBox>
+      <Separator />
+      <SectionBox>
+        <Footer />
+      </SectionBox>
     </Box>
   );
 }

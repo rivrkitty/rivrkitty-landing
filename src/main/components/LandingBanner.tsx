@@ -8,6 +8,8 @@ import { Button } from "@mui/material";
 import { defaultContentPadding } from "../../utils/theme";
 import FLOATINGKITTY from "../../assets/token/FLOATINGKITTY.png";
 import Box from "@mui/system/Box";
+import FarmCount from "./FarmCount";
+import SectionBox from "../../common/components/SectionBox";
 
 const useStyles = makeStyles((theme) => ({
   bannerText: {
@@ -22,22 +24,26 @@ const useStyles = makeStyles((theme) => ({
     color: "#fff",
   },
   desktopRootCss: {
-    backgroundImage: `linear-gradient(180deg, rgba(18, 26, 40, 0) -22.67%, #121A28 78.69%), url(${
+    backgroundImage: `linear-gradient(180deg, rgba(18, 26, 40, 0) 56.33%, #121A28 100.69%), url(${
       getSingleAssetSrc("LANDINGIMAGE").default
     })`,
+    backgroundPositionX: "center",
     backgroundRepeat: "no-repeat",
     width: "100%",
     display: "flex",
+    justifyContent: "center",
   },
   mobileRootCss: {
     backgroundImage: `linear-gradient(180deg, rgba(18, 26, 40, 0) -11.67%, #121A28 72.69%), url(${
       getSingleAssetSrc("LANDINGIMAGE").default
     })`,
-    backgroundPositionX: "right",
-    flexDirection: "column-reverse",
+    backgroundPositionX: "62%",
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
   },
   bannerWrapper: {
-    justifyContent: "end",
+    justifyContent: "center",
     display: "flex",
     maxWidth: "612px",
     flexDirection: "column",
@@ -67,97 +73,112 @@ export default function LandingBanner() {
   const isTabletOrMobile = useMediaQuery({ maxWidth: 899 });
 
   return (
-    <div
-      className={`${isTabletOrMobile && classes.mobileRootCss} ${
-        classes.desktopRootCss
-      }`}
-    >
-      <Box
-        className={`${isTabletOrMobile && classes.mobileBannerWrapper} ${
-          classes.bannerWrapper
+    <>
+      <div
+        className={`${isTabletOrMobile && classes.mobileRootCss} ${
+          classes.desktopRootCss
         }`}
-        sx={{ ...defaultContentPadding }}
       >
-        <Typography
-          variant="h1"
-          className={`${isTabletOrMobile && classes.mobileBannerText} ${
-            classes.bannerText
-          }`}
+        <SectionBox
+          sx={
+            isTabletOrMobile
+              ? {
+                  display: "flex",
+                  flexDirection: "column-reverse",
+                }
+              : {
+                  width: "100%",
+                  display: "flex",
+                  minHeight: "900px",
+                }
+          }
         >
-          An Emerging Play&#8209;to&#8209;Earn KittyVerse Blending DeFi & NFTs
-        </Typography>
-        <Box
-          sx={{
-            paddingTop: { xs: 1 },
-            paddingBottom: { xs: 1 },
-            wordBreak: "break-word",
-            color: "#EEAB47",
-          }}
-        >
-          Moonriver Contract: 0xC2b0435276139731d82Ae2Fa8928c9b9De0761c1
-        </Box>
-        <div>
-          <Button
-            variant="contained"
+          <Box
+            className={`${isTabletOrMobile && classes.mobileBannerWrapper} ${
+              classes.bannerWrapper
+            }`}
+            sx={{ ...defaultContentPadding }}
+          >
+            <Typography
+              variant="h1"
+              className={`${isTabletOrMobile && classes.mobileBannerText} ${
+                classes.bannerText
+              }`}
+            >
+              An Emerging Play&#8209;to&#8209;Earn KittyVerse Blending DeFi &
+              NFTs
+            </Typography>
+            <Box
+              sx={{
+                paddingTop: { xs: 1 },
+                paddingBottom: { xs: 1 },
+                wordBreak: "break-word",
+                color: "#EEAB47",
+              }}
+            >
+              Moonriver Contract: 0xC2b0435276139731d82Ae2Fa8928c9b9De0761c1
+            </Box>
+            <div>
+              <Button
+                variant="contained"
+                sx={{
+                  marginTop: 2,
+                  marginRight: 2,
+                  paddingLeft: {
+                    xs: 7,
+                    md: "inherit",
+                  },
+                  paddingRight: {
+                    xs: 7,
+                    md: "inherit",
+                  },
+                }}
+              >
+                $BUY
+              </Button>
+              <Button
+                variant="contained"
+                sx={{
+                  marginTop: 2,
+                  marginRight: 2,
+                  background: "#9969A6",
+                  paddingLeft: {
+                    xs: 7,
+                    md: "inherit",
+                  },
+                  paddingRight: {
+                    xs: 7,
+                    md: "inherit",
+                  },
+                }}
+              >
+                CHART
+              </Button>
+            </div>
+          </Box>
+          <Box
+            className={`${isTabletOrMobile && classes.mobileFloatingRkitty} ${classes.floatingRkittyAnim}`}
             sx={{
-              marginTop: 2,
-              marginRight: 2,
-              paddingLeft: {
-                xs: 7,
-                md: "inherit",
+              alignItems: {
+                md: "start",
+                xs: "end",
               },
-              paddingRight: {
-                xs: 7,
-                md: "inherit",
+              width: {
+                md: "40%",
               },
             }}
           >
-            $BUY
-          </Button>
-          <Button
-            variant="contained"
-            sx={{
-              marginTop: 2,
-              marginRight: 2,
-              background: "#9969A6",
-              paddingLeft: {
-                xs: 7,
-                md: "inherit",
-              },
-              paddingRight: {
-                xs: 7,
-                md: "inherit",
-              },
-            }}
-          >
-            CHART
-          </Button>
-        </div>
-      </Box>
-      <Box
-        className={`${isTabletOrMobile && classes.mobileFloatingRkitty} ${classes.floatingRkittyAnim}`}
-        sx={{
-          alignItems: {
-            md: "end",
-            xs: "end",
-          },
-          width: {
-            md: "40%",
-          },
-          height: {
-            // xs:"750px",
-            // md: "600px"
-          },
-        }}
-      >
-        <img
-          style={{
-            height: "340px",
-          }}
-          src={FLOATINGKITTY}
-          alt="Floating RivrKitty"
-        />
-      </Box>
-    </div>
+            <img
+              style={{
+                height: "340px",
+              }}
+              src={FLOATINGKITTY}
+              alt="Floating RivrKitty"
+            />
+          </Box>
+        </SectionBox>
+      </div>
+      <FarmCount />
+    </>
   );
 }
