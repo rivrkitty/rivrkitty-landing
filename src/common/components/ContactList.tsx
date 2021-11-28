@@ -13,7 +13,12 @@ export default function ContactList() {
   const { t } = useTranslation();
 
   return (
-    <List sx={{ width: "100%", bgcolor: "background.paper" }}>
+    <List
+      sx={{
+        width: "100%",
+        bgcolor: "background.paper",
+      }}
+    >
       {CONTACT_ITEMS.map((item) => (
         <ListItem key={item.primaryText} sx={{ pt: 0, pb: 0 }}>
           <ListItemButton

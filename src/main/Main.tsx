@@ -33,9 +33,13 @@ export default function Main() {
       <SectionBox>
         <IntroVideo />
         <NFTPreview />
-        <OurStory />
+      </SectionBox>
+      <OurStory />
+      <SectionBox>
         <Tokenomics />
-        <Roadmap />
+      </SectionBox>
+      <Roadmap />
+      <SectionBox>
         <Contact />
       </SectionBox>
       <Separator />

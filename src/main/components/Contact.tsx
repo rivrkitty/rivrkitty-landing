@@ -1,3 +1,4 @@
+import { Hidden } from "@mui/material";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
@@ -40,6 +41,11 @@ export default function Contact() {
           <Typography variant="body1" sx={{ ml: 2 }}>
             0xC2b0435276139731d82Ae2Fa8928c9b9De0761c1
           </Typography>
+          <Hidden mdUp>
+            <Typography variant="subtitle2" sx={{ mt: 3 }}>
+              {t("contactMeow")}
+            </Typography>
+          </Hidden>
           <ContactList />
         </Grid>
       </Grid>

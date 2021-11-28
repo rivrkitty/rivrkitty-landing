@@ -9,6 +9,7 @@ import { defaultContentPadding } from "../../utils/theme";
 import FLOATINGKITTY from "../../assets/token/FLOATINGKITTY.png";
 import Box from "@mui/system/Box";
 import FarmCount from "./FarmCount";
+import SectionBox from "../../common/components/SectionBox";
 
 const useStyles = makeStyles((theme) => ({
   bannerText: {
@@ -30,14 +31,16 @@ const useStyles = makeStyles((theme) => ({
     backgroundRepeat: "no-repeat",
     width: "100%",
     display: "flex",
-    minHeight: "900px",
+    justifyContent: "center",
   },
   mobileRootCss: {
     backgroundImage: `linear-gradient(180deg, rgba(18, 26, 40, 0) -11.67%, #121A28 72.69%), url(${
       getSingleAssetSrc("LANDINGIMAGE").default
     })`,
     backgroundPositionX: "62%",
-    flexDirection: "column-reverse",
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
   },
   bannerWrapper: {
     justifyContent: "center",
@@ -74,88 +77,104 @@ export default function LandingBanner() {
           classes.desktopRootCss
         }`}
       >
-        <Box
-          className={`${isTabletOrMobile && classes.mobileBannerWrapper} ${
-            classes.bannerWrapper
-          }`}
-          sx={{ ...defaultContentPadding }}
+        <SectionBox
+          sx={
+            isTabletOrMobile
+              ? {
+                  display: "flex",
+                  flexDirection: "column-reverse",
+                }
+              : {
+                  width: "100%",
+                  display: "flex",
+                  minHeight: "900px",
+                }
+          }
         >
-          <Typography
-            variant="h1"
-            className={`${isTabletOrMobile && classes.mobileBannerText} ${
-              classes.bannerText
-            }`}
-          >
-            An Emerging Play&#8209;to&#8209;Earn KittyVerse Blending DeFi & NFTs
-          </Typography>
           <Box
+            className={`${isTabletOrMobile && classes.mobileBannerWrapper} ${
+              classes.bannerWrapper
+            }`}
+            sx={{ ...defaultContentPadding }}
+          >
+            <Typography
+              variant="h1"
+              className={`${isTabletOrMobile && classes.mobileBannerText} ${
+                classes.bannerText
+              }`}
+            >
+              An Emerging Play&#8209;to&#8209;Earn KittyVerse Blending DeFi &
+              NFTs
+            </Typography>
+            <Box
+              sx={{
+                paddingTop: { xs: 1 },
+                paddingBottom: { xs: 1 },
+                wordBreak: "break-word",
+                color: "#EEAB47",
+              }}
+            >
+              Moonriver Contract: 0xC2b0435276139731d82Ae2Fa8928c9b9De0761c1
+            </Box>
+            <div>
+              <Button
+                variant="contained"
+                sx={{
+                  marginTop: 2,
+                  marginRight: 2,
+                  paddingLeft: {
+                    xs: 7,
+                    md: "inherit",
+                  },
+                  paddingRight: {
+                    xs: 7,
+                    md: "inherit",
+                  },
+                }}
+              >
+                $BUY
+              </Button>
+              <Button
+                variant="contained"
+                sx={{
+                  marginTop: 2,
+                  marginRight: 2,
+                  background: "#9969A6",
+                  paddingLeft: {
+                    xs: 7,
+                    md: "inherit",
+                  },
+                  paddingRight: {
+                    xs: 7,
+                    md: "inherit",
+                  },
+                }}
+              >
+                CHART
+              </Button>
+            </div>
+          </Box>
+          <Box
+            className={classes.floatingRkittyAnim}
             sx={{
-              paddingTop: { xs: 1 },
-              paddingBottom: { xs: 1 },
-              wordBreak: "break-word",
-              color: "#EEAB47",
+              alignItems: {
+                md: "start",
+                xs: "end",
+              },
+              width: {
+                md: "40%",
+              },
             }}
           >
-            Moonriver Contract: 0xC2b0435276139731d82Ae2Fa8928c9b9De0761c1
+            <img
+              style={{
+                height: "340px",
+              }}
+              src={FLOATINGKITTY}
+              alt="Floating RivrKitty"
+            />
           </Box>
-          <div>
-            <Button
-              variant="contained"
-              sx={{
-                marginTop: 2,
-                marginRight: 2,
-                paddingLeft: {
-                  xs: 7,
-                  md: "inherit",
-                },
-                paddingRight: {
-                  xs: 7,
-                  md: "inherit",
-                },
-              }}
-            >
-              $BUY
-            </Button>
-            <Button
-              variant="contained"
-              sx={{
-                marginTop: 2,
-                marginRight: 2,
-                background: "#9969A6",
-                paddingLeft: {
-                  xs: 7,
-                  md: "inherit",
-                },
-                paddingRight: {
-                  xs: 7,
-                  md: "inherit",
-                },
-              }}
-            >
-              CHART
-            </Button>
-          </div>
-        </Box>
-        <Box
-          className={classes.floatingRkittyAnim}
-          sx={{
-            alignItems: {
-              md: "start",
-              xs: "end",
-            },
-            width: {
-              md: "40%",
-            },
-          }}
-        >
-          <img
-            style={{
-              height: "340px",
-            }}
-            src={FLOATINGKITTY}
-            alt="Floating RivrKitty"
-          />
-        </Box>
+        </SectionBox>
       </div>
       <FarmCount />
     </>

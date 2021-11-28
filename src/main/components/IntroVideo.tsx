@@ -7,6 +7,7 @@ import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import { defaultContentPadding } from "../../utils/theme";
+import EntryAnimation from "../../common/components/EntryAnimation";
 
 const iconSx = {
   fontSize: 80,
@@ -65,63 +66,65 @@ export default function IntroVideo() {
         justifyContent: "center",
       }}
     >
-      <Box sx={{ position: "relative" }}>
-        <Box
-          ref={videoRef}
-          component="video"
-          sx={{ maxWidth: "100%", maxHeight: 500 }}
-          muted
-        >
-          <source src="videos/intro.m4v" type="video/mp4" />
-        </Box>
-        <Box
-          sx={{
-            position: "absolute",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: isHover || isPaused ? "#000000aa" : "#00000000",
-            transition: "background-color 0.5s",
-          }}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          <IconButton
-            size="large"
-            sx={{
-              marginRight: 1,
-              opacity: isHover || isPaused ? "100%" : "0%",
-              transition: "opacity 0.5s",
-            }}
-            onClick={handlePlayClick}
+      <EntryAnimation>
+        <Box sx={{ position: "relative" }}>
+          <Box
+            ref={videoRef}
+            component="video"
+            sx={{ maxWidth: "100%", maxHeight: 600 }}
+            muted
           >
-            {isPaused ? (
-              <PlayCircleIcon sx={iconSx} />
-            ) : (
-              <PauseCircleIcon sx={iconSx} />
-            )}
-          </IconButton>
-          <IconButton
-            size="large"
+            <source src="videos/intro.m4v" type="video/mp4" />
+          </Box>
+          <Box
             sx={{
-              marginLeft: 1,
-              opacity: isHover || isPaused ? "100%" : "0%",
-              transition: "opacity 0.5s",
+              position: "absolute",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: isHover || isPaused ? "#000000aa" : "#00000000",
+              transition: "background-color 0.5s",
             }}
-            onClick={handleVolumeClick}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
           >
-            {isMuted ? (
-              <VolumeOffIcon sx={iconSx} />
-            ) : (
-              <VolumeUpIcon sx={iconSx} />
-            )}
-          </IconButton>
+            <IconButton
+              size="large"
+              sx={{
+                marginRight: 1,
+                opacity: isHover || isPaused ? "100%" : "0%",
+                transition: "opacity 0.5s",
+              }}
+              onClick={handlePlayClick}
+            >
+              {isPaused ? (
+                <PlayCircleIcon sx={iconSx} />
+              ) : (
+                <PauseCircleIcon sx={iconSx} />
+              )}
+            </IconButton>
+            <IconButton
+              size="large"
+              sx={{
+                marginLeft: 1,
+                opacity: isHover || isPaused ? "100%" : "0%",
+                transition: "opacity 0.5s",
+              }}
+              onClick={handleVolumeClick}
+            >
+              {isMuted ? (
+                <VolumeOffIcon sx={iconSx} />
+              ) : (
+                <VolumeUpIcon sx={iconSx} />
+              )}
+            </IconButton>
+          </Box>
         </Box>
-      </Box>
+      </EntryAnimation>
     </Box>
   );
 }

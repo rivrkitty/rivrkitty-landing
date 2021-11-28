@@ -8,13 +8,14 @@ import { blueGradient, defaultContentPadding } from "../../utils/theme";
 import Story from "../../assets/Story.png";
 import Hidden from "@mui/material/Hidden";
 import EntryAnimation from "../../common/components/EntryAnimation";
+import SectionBox from "../../common/components/SectionBox";
 
 export default function OurStory() {
   const { t } = useTranslation();
 
   return (
     <EntryAnimation>
-      <Box sx={{ position: "relative" }}>
+      <Box sx={{ position: "relative", width: "100%" }}>
         <Box
           sx={{
             clipPath:
@@ -24,71 +25,76 @@ export default function OurStory() {
               xs: "180px",
               md: "0px",
             },
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
           }}
         >
-          <Grid
-            container
-            sx={{
-              ...defaultContentPadding,
-              paddingTop: "100px",
-              paddingBottom: "140px",
-            }}
-            spacing={4}
-          >
+          <SectionBox>
             <Grid
-              item
-              xs={12}
-              md={7}
-              sx={{ display: "flex", flexDirection: "column" }}
+              container
+              sx={{
+                ...defaultContentPadding,
+                paddingTop: "100px",
+                paddingBottom: "140px",
+              }}
+              spacing={4}
             >
-              <Typography variant="h3">{t("storyTitle")}</Typography>
-              <Typography
-                variant="body1"
-                sx={{ marginTop: 2, marginBottom: 2, color: "black" }}
-              >
-                {t("storyBody1")}
-              </Typography>
-              <Typography
-                variant="body1"
-                sx={{ marginTop: 2, marginBottom: 2, color: "black" }}
-              >
-                {t("storyBody2")}
-              </Typography>
-              <Button
-                variant="contained"
-                sx={{
-                  alignSelf: {
-                    xs: "center",
-                    md: "flex-start",
-                  },
-                  marginTop: 2,
-                  paddingLeft: {
-                    xs: 7,
-                    md: 4,
-                  },
-                  paddingRight: {
-                    xs: 7,
-                    md: 4,
-                  },
-                }}
-              >
-                {t("storyReadLitepaper")}
-              </Button>
-            </Grid>
-            <Hidden mdDown>
               <Grid
                 item
-                md={5}
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+                xs={12}
+                md={7}
+                sx={{ display: "flex", flexDirection: "column" }}
               >
-                <img src={Story} alt="RivrKitty Story" />
+                <Typography variant="h3">{t("storyTitle")}</Typography>
+                <Typography
+                  variant="body1"
+                  sx={{ marginTop: 2, marginBottom: 2, color: "black" }}
+                >
+                  {t("storyBody1")}
+                </Typography>
+                <Typography
+                  variant="body1"
+                  sx={{ marginTop: 2, marginBottom: 2, color: "black" }}
+                >
+                  {t("storyBody2")}
+                </Typography>
+                <Button
+                  variant="contained"
+                  sx={{
+                    alignSelf: {
+                      xs: "center",
+                      md: "flex-start",
+                    },
+                    marginTop: 2,
+                    paddingLeft: {
+                      xs: 7,
+                      md: 4,
+                    },
+                    paddingRight: {
+                      xs: 7,
+                      md: 4,
+                    },
+                  }}
+                >
+                  {t("storyReadLitepaper")}
+                </Button>
               </Grid>
-            </Hidden>
-          </Grid>
+              <Hidden mdDown>
+                <Grid
+                  item
+                  md={5}
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <img src={Story} alt="RivrKitty Story" />
+                </Grid>
+              </Hidden>
+            </Grid>
+          </SectionBox>
         </Box>
         <Hidden mdUp>
           <img
@@ -96,7 +102,7 @@ export default function OurStory() {
               position: "absolute",
               left: "50%",
               transform: "translate(-50%, 0%)",
-              top: "-130px",
+              top: "30px",
               height: "220px",
             }}
             src={Story}

@@ -74,13 +74,13 @@ export default createTheme({
     },
     subtitle1: {
       color: "white",
-      fontFamily: "Nunito",
+      fontFamily: "Roboto Mono",
       fontWeight: "700",
       fontSize: "26px",
     },
     subtitle2: {
       color: "white",
-      fontFamily: "Nunito",
+      fontFamily: "Roboto Mono",
       fontWeight: "700",
       fontSize: "18px",
     },
@@ -102,6 +102,21 @@ export default createTheme({
       fontSize: 14,
       fontWeight: 500,
       textTransform: "none",
+    },
+  },
+  components: {
+    MuiLink: {
+      defaultProps: {
+        fontFamily: "Poppins",
+        fontWeight: 800,
+      },
+    },
+    MuiListItemButton: {
+      defaultProps: {
+        style: {
+          borderRadius: 12,
+        },
+      },
     },
   },
 });
