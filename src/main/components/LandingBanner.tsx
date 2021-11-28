@@ -7,6 +7,8 @@ import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
 import { defaultContentPadding } from "../../utils/theme";
 import FLOATINGKITTY from "../../assets/token/FLOATINGKITTY.png";
+import COINGECKO from "../../assets/token/COINGECKO.png";
+import COINMARKETCAP from "../../assets/token/COINMARKETCAP.png";
 import Box from "@mui/system/Box";
 import FarmCount from "./FarmCount";
 import SectionBox from "../../common/components/SectionBox";
@@ -57,18 +59,44 @@ const useStyles = makeStyles((theme) => ({
   floatingRkittyAnim: {
     display: "flex",
     margin: "0 auto",
-    marginTop: "300px",
+    marginTop: "190px",
+    marginBottom: "90px",
     justifyContent: "flex-start",
     animationName: "floating",
-    animationDuration: "3s",
-    animationIterationCount: "infinite",
-    animationTimingFunction: "ease-in-out",
+    animation: "3.5s ease-out 0s infinite normal none running",
+  },
+  mobileFloatingRkitty: {
+    marginBottom: "140px",
+    marginTop: "150px",
+  },
+  textButton: {
+    color: "#ffffff",
+    fontWeight: "Bold",
+    padding: "2px 8px",
+    fontSize: "16px",
+    marginRight: "6px",
+    height: "38px",
   },
 }));
 
 export default function LandingBanner() {
   const classes = useStyles();
   const isTabletOrMobile = useMediaQuery({ maxWidth: 899 });
+  const ButtonSx = {
+    marginTop: 2,
+    marginRight: 2,
+    paddingLeft: {
+      xs: 7,
+      md: "30px",
+    },
+    paddingRight: {
+      xs: 7,
+      md: "30px",
+    },
+  };
+
+  const TextButtonsWrapper: React.FC<{}> = ({ children }) =>
+    isTabletOrMobile ? <div>{children}</div> : <>{children}</>;
 
   return (
     <>
@@ -87,7 +115,7 @@ export default function LandingBanner() {
               : {
                   width: "100%",
                   display: "flex",
-                  minHeight: "900px",
+                  minHeight: "901px",
                 }
           }
         >
@@ -119,43 +147,64 @@ export default function LandingBanner() {
             <div>
               <Button
                 variant="contained"
-                sx={{
-                  marginTop: 2,
-                  marginRight: 2,
-                  paddingLeft: {
-                    xs: 7,
-                    md: "inherit",
-                  },
-                  paddingRight: {
-                    xs: 7,
-                    md: "inherit",
-                  },
-                }}
+                sx={ButtonSx}
+                href={
+                  "https://www.huckleberry.finance/#/swap?outputCurrency=0xC2b0435276139731d82Ae2Fa8928c9b9De0761c1"
+                }
+                target="_blank"
               >
                 $BUY
               </Button>
               <Button
                 variant="contained"
-                sx={{
-                  marginTop: 2,
-                  marginRight: 2,
-                  background: "#9969A6",
-                  paddingLeft: {
-                    xs: 7,
-                    md: "inherit",
-                  },
-                  paddingRight: {
-                    xs: 7,
-                    md: "inherit",
-                  },
-                }}
+                sx={ButtonSx}
+                href={
+                  "https://dexscreener.com/moonriver/0xfdbc58805abbc36cacd7e1af65e7646665d61f08"
+                }
+                target="_blank"
               >
                 CHART
               </Button>
+              <TextButtonsWrapper>
+                <Button
+                  variant="text"
+                  sx={ButtonSx}
+                  href={"https://www.coingecko.com/en/coins/rivrkitty"}
+                  target="_blank"
+                  className={classes.textButton}
+                >
+                  <img
+                    style={{
+                      height: "34px",
+                      marginRight: "8px",
+                    }}
+                    src={COINGECKO}
+                    alt="CoinGecko"
+                  />
+                  CoinGecko
+                </Button>
+                <Button
+                  variant="text"
+                  sx={ButtonSx}
+                  href={"https://coinmarketcap.com/currencies/rivrkitty"}
+                  target="_blank"
+                  className={classes.textButton}
+                >
+                  <img
+                    style={{
+                      height: "28px",
+                    }}
+                    src={COINMARKETCAP}
+                    alt="CoinMarketcap"
+                  />
+                </Button>
+              </TextButtonsWrapper>
             </div>
           </Box>
           <Box
-            className={classes.floatingRkittyAnim}
+            className={`${isTabletOrMobile && classes.mobileFloatingRkitty} ${
+              classes.floatingRkittyAnim
+            }`}
             sx={{
               alignItems: {
                 md: "start",

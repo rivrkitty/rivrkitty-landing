@@ -57,6 +57,7 @@ export default function Header(props: BoxProps) {
         flexFlow: "row wrap",
         alignItems: "center",
         minHeight: 64,
+        zIndex: "1000",
         ...sx,
       }}
       {...other}
@@ -83,7 +84,9 @@ export default function Header(props: BoxProps) {
       <MediaQuery minWidth={1024}>
         <Divider />
         <Box flex={1} />
-        <FancyButton> {t("launchApp")}</FancyButton>
+        <Link target="_blank" href={"https://app.rivrkitty.com"}>
+          <FancyButton>{t("launchApp")}</FancyButton>
+        </Link>
         <MoreMenu />
       </MediaQuery>
     </Box>
