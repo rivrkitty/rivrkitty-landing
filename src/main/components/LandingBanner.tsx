@@ -51,7 +51,8 @@ const useStyles = makeStyles((theme) => ({
   floatingRkittyAnim: {
     display: "flex",
     margin: "0 auto",
-    marginTop: "250px",
+    marginTop: "275px",
+    marginBottom: "25px",
     justifyContent: "flex-start",
     animationName: "floating",
     animation: "2.6s ease-out 0s infinite normal none running"
