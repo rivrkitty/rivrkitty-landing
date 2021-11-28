@@ -37,6 +37,14 @@ export default function IntroVideo() {
     }
   };
 
+  React.useEffect(() => {
+    if (inView) {
+      videoRef.current?.play();
+    } else {
+      videoRef.current?.pause();
+    }
+  }, [inView]);
+
   return (
     <Box
       ref={ref}
@@ -52,7 +60,6 @@ export default function IntroVideo() {
             ref={videoRef}
             component="video"
             sx={{ maxWidth: "100%", maxHeight: 600 }}
-            autoPlay
             loop
             muted
           >

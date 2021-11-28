@@ -1,3 +1,4 @@
+import { Hidden } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -37,10 +38,12 @@ export default function ContactList() {
                 }}
               />
             </ListItemAvatar>
-            <ListItemText
-              primary={t(item.primaryText)}
-              secondary={t(item.secondaryText)}
-            />
+            <Hidden mdDown>
+              <ListItemText
+                primary={t(item.primaryText)}
+                secondary={t(item.secondaryText)}
+              />
+            </Hidden>
           </ListItemButton>
         </ListItem>
       ))}

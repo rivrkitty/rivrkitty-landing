@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import ContactList from "../../common/components/ContactList";
+import ContactListMobile from "../../common/components/ContactListMobile";
 import EntryAnimation from "../../common/components/EntryAnimation";
 import { defaultContentPadding } from "../../utils/theme";
 
@@ -42,11 +43,16 @@ export default function Contact() {
             0xC2b0435276139731d82Ae2Fa8928c9b9De0761c1
           </Typography>
           <Hidden mdUp>
-            <Typography variant="subtitle2" sx={{ mt: 3 }}>
+            <Typography variant="subtitle2" sx={{ mt: 6, textAlign: "center" }}>
               {t("contactMeow")}
             </Typography>
           </Hidden>
-          <ContactList />
+          <Hidden mdDown>
+            <ContactList />
+          </Hidden>
+          <Hidden mdUp>
+            <ContactListMobile sx={{ mt: 2 }} />
+          </Hidden>
         </Grid>
       </Grid>
     </EntryAnimation>
