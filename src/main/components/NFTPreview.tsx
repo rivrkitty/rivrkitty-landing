@@ -30,6 +30,10 @@ function DescriptionText() {
       </Typography>
       <Button
         variant="contained"
+        href={
+          "https://medium.com/@rivrkitty/rivrkitty-the-big-bang-da9e38f5c685"
+        }
+        target="_blank"
         sx={{
           alignSelf: {
             xs: "center",
