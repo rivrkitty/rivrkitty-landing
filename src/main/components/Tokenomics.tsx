@@ -106,6 +106,7 @@ function InfoData(props: {
               href={link.url}
               color="secondary"
               key={link.text}
+              target="_blank"
               sx={{
                 display: "flex",
                 alignItems: "center",

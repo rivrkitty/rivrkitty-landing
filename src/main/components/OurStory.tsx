@@ -61,6 +61,8 @@ export default function OurStory() {
                 </Typography>
                 <Button
                   variant="contained"
+                  href={"https://docs.rivrkitty.com/litepaper/introduction"}
+                  target="_blank"
                   sx={{
                     alignSelf: {
                       xs: "center",

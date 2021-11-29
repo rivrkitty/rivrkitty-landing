@@ -174,7 +174,11 @@ export default function LandingBanner() {
                 </Button>
                 <Button
                   variant="contained"
-                  sx={{ ...ButtonSx, width: { xs: "280px", md: "90px" } }}
+                  sx={{
+                    ...ButtonSx,
+                    width: { xs: "280px", md: "90px" },
+                    backgroundColor: "#9969A6",
+                  }}
                   href={
                     "https://dexscreener.com/moonriver/0xfdbc58805abbc36cacd7e1af65e7646665d61f08"
                   }
@@ -182,42 +186,41 @@ export default function LandingBanner() {
                 >
                   CHART
                 </Button>
+                <TextButtonsWrapper>
+                  <Button
+                    variant="text"
+                    sx={ButtonSx}
+                    href={"https://www.coingecko.com/en/coins/rivrkitty"}
+                    target="_blank"
+                    className={classes.textButton}
+                  >
+                    <img
+                      style={{
+                        height: "34px",
+                        marginRight: "8px",
+                      }}
+                      src={COINGECKO}
+                      alt="CoinGecko"
+                    />
+                    CoinGecko
+                  </Button>
+                  <Button
+                    variant="text"
+                    sx={ButtonSx}
+                    href={"https://coinmarketcap.com/currencies/rivrkitty"}
+                    target="_blank"
+                    className={classes.textButton}
+                  >
+                    <img
+                      style={{
+                        height: "28px",
+                      }}
+                      src={COINMARKETCAP}
+                      alt="CoinMarketcap"
+                    />
+                  </Button>
+                </TextButtonsWrapper>
               </Box>
-
-              <TextButtonsWrapper>
-                <Button
-                  variant="text"
-                  sx={ButtonSx}
-                  href={"https://www.coingecko.com/en/coins/rivrkitty"}
-                  target="_blank"
-                  className={classes.textButton}
-                >
-                  <img
-                    style={{
-                      height: "34px",
-                      marginRight: "8px",
-                    }}
-                    src={COINGECKO}
-                    alt="CoinGecko"
-                  />
-                  CoinGecko
-                </Button>
-                <Button
-                  variant="text"
-                  sx={ButtonSx}
-                  href={"https://coinmarketcap.com/currencies/rivrkitty"}
-                  target="_blank"
-                  className={classes.textButton}
-                >
-                  <img
-                    style={{
-                      height: "28px",
-                    }}
-                    src={COINMARKETCAP}
-                    alt="CoinMarketcap"
-                  />
-                </Button>
-              </TextButtonsWrapper>
             </div>
           </Box>
           <Box

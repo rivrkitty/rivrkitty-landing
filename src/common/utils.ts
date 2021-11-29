@@ -34,6 +34,6 @@ export const CONTACT_ITEMS: ContactItemType[] = [
     primaryText: "menuDocumentation",
     secondaryText: "menuDocumentationSecondaryText",
     icon: "DOCUMENTATION",
-    redirectTo: "https://medium.com/@rivrkitty",
+    redirectTo: "https://docs.rivrkitty.com",
   },
 ];
