@@ -2,6 +2,7 @@ import { Hidden } from "@mui/material";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import ContactList from "../../common/components/ContactList";
@@ -12,6 +13,14 @@ import { defaultContentPadding } from "../../utils/theme";
 
 export default function Contact() {
   const { t } = useTranslation();
+
+  const [mousedOver, setMousedOver] = React.useState(false);
+
+  const handleAddressMouseOver = () => setMousedOver(true);
+  const handleAddressMouseOut = () => setMousedOver(false);
+  const handleAddressClicked = () => {
+    navigator.clipboard.writeText("0xC2b0435276139731d82Ae2Fa8928c9b9De0761c1");
+  };
 
   return (
     <SectionBox>
@@ -43,9 +52,29 @@ export default function Contact() {
             </Typography>
             <Typography
               variant="body1"
-              sx={{ ml: 2, mt: 1, lineBreak: "anywhere" }}
+              onMouseOver={handleAddressMouseOver}
+              onMouseOut={handleAddressMouseOut}
+              onClick={handleAddressClicked}
+              sx={{
+                ml: 2,
+                mt: 1,
+                lineBreak: "anywhere",
+                textDecoration: "none",
+                cursor: "pointer",
+                "&:hover": {
+                  textDecoration: "underline",
+                },
+              }}
             >
               0xC2b0435276139731d82Ae2Fa8928c9b9De0761c1
+              <Box
+                sx={{
+                  display: mousedOver ? "inline" : "none",
+                  marginLeft: 1,
+                }}
+              >
+                <ContentCopyIcon sx={{ fontSize: "14px" }} />
+              </Box>
             </Typography>
             <Hidden mdUp>
               <Typography
