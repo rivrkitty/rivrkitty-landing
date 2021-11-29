@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "@mui/material/Link";
 import { getSingleAssetSrc } from "../../utils/getSingleAssetSrc";
 import { makeStyles } from "@mui/styles";
 import "@fontsource/roboto-mono";
@@ -63,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "90px",
     justifyContent: "flex-start",
     animationName: "floating",
-    animation: "3.5s ease-out 0s infinite normal none running",
+    animation: "6s ease-out 0s infinite normal none running",
   },
   mobileFloatingRkitty: {
     marginBottom: "140px",
@@ -143,7 +144,15 @@ export default function LandingBanner() {
                 color: "#EEAB47",
               }}
             >
-              Moonriver Contract: 0xC2b0435276139731d82Ae2Fa8928c9b9De0761c1
+              <Link
+                color="secondary"
+                target="_blank"
+                href={
+                  "https://moonriver.moonscan.io/address/0xC2b0435276139731d82Ae2Fa8928c9b9De0761c1"
+                }
+              >
+                Moonriver Contract: 0xC2b0435276139731d82Ae2Fa8928c9b9De0761c1
+              </Link>
             </Box>
             <div>
               <Box
@@ -155,7 +164,7 @@ export default function LandingBanner() {
               >
                 <Button
                   variant="contained"
-                  sx={{ ...ButtonSx, width: { xs: "280px", md: "inherit" } }}
+                  sx={{ ...ButtonSx, width: { xs: "280px", md: "90px" } }}
                   href={
                     "https://www.huckleberry.finance/#/swap?outputCurrency=0xC2b0435276139731d82Ae2Fa8928c9b9De0761c1"
                   }
@@ -165,7 +174,7 @@ export default function LandingBanner() {
                 </Button>
                 <Button
                   variant="contained"
-                  sx={{ ...ButtonSx, width: { xs: "280px", md: "inherit" } }}
+                  sx={{ ...ButtonSx, width: { xs: "280px", md: "90px" } }}
                   href={
                     "https://dexscreener.com/moonriver/0xfdbc58805abbc36cacd7e1af65e7646665d61f08"
                   }
