@@ -31,21 +31,13 @@ export default function Main() {
       <Separator sx={{ position: "absolute", top: "64px" }} />
       <LandingBanner />
       <IntroVideo />
-      <SectionBox>
-        <NFTPreview />
-      </SectionBox>
+      <NFTPreview />
       <OurStory />
-      <SectionBox>
-        <Tokenomics />
-      </SectionBox>
+      <Tokenomics />
       <Roadmap />
-      <SectionBox>
-        <Contact />
-      </SectionBox>
+      <Contact />
       <Separator />
-      <SectionBox>
-        <Footer />
-      </SectionBox>
+      <Footer />
     </Box>
   );
 }

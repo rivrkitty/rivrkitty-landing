@@ -4,6 +4,8 @@ import { makeStyles } from "@mui/styles";
 import Typography from "@mui/material/Typography";
 import CountUp from "react-countup";
 import EntryAnimation from "../../common/components/EntryAnimation";
+import { useFetchTvl } from "../../common/redux/fetchTvl";
+import { useTranslation } from "react-i18next";
 
 const useStyles = makeStyles((theme) => ({
   subTitle2: {
@@ -12,8 +14,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 export default function FarmCount() {
   const classes = useStyles();
-  const rkittyTVL = 10000000;
-  const stackingTVL = 10000000;
+
+  const { t } = useTranslation();
+  const { fetchTvl, totalTvl } = useFetchTvl();
+
+  React.useEffect(() => {
+    fetchTvl();
+  }, [fetchTvl]);
 
   return (
     <EntryAnimation>
@@ -34,33 +41,30 @@ export default function FarmCount() {
           variant="h1"
           sx={{ pt: 2, fontSize: { xs: "36px", md: "50px" } }}
         >
-          <CountUp
-            start={0}
-            end={rkittyTVL}
-            duration={3}
-            separator=","
-            decimals={2}
-            prefix={"$"}
-          />
+          {totalTvl ? (
+            <CountUp
+              start={0}
+              end={parseInt(totalTvl || "0")}
+              duration={3}
+              separator=","
+              decimals={2}
+              prefix={"$"}
+            />
+          ) : (
+            "-"
+          )}
         </Typography>
         <Typography variant="body1" className={classes.subTitle2}>
-          TOTAL VALUE LOCKED $RKITTY (TVL)
+          {t("farmCountLpStaking")}
         </Typography>
         <Typography
           variant="h1"
           sx={{ pt: 2, fontSize: { xs: "36px", md: "50px" } }}
         >
-          <CountUp
-            start={0}
-            end={stackingTVL}
-            duration={3}
-            separator=","
-            decimals={2}
-            prefix={"$"}
-          />
+          {t("farmCountSingleStakingInfo")}
         </Typography>
         <Typography variant="body1" className={classes.subTitle2}>
-          TOTAL VALUE LOCKED LP STAKING (TVL)
+          {t("farmCountSingleStaking")}
         </Typography>
       </Box>
     </EntryAnimation>

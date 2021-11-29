@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import { defaultContentPadding } from "../../utils/theme";
 import NFT from "../../assets/NFT.gif";
 import EntryAnimation from "../../common/components/EntryAnimation";
+import SectionBox from "../../common/components/SectionBox";
 
 function TitleText() {
   const { t } = useTranslation();
@@ -53,51 +54,53 @@ function DescriptionText() {
 
 export default function NFTPreview() {
   return (
-    <EntryAnimation>
-      <Grid
-        container
-        sx={{
-          ...defaultContentPadding,
-          paddingTop: 6,
-          paddingBottom: 8,
-        }}
-        spacing={4}
-      >
-        <Grid item xs={12} md={6}>
-          <Box
-            sx={{
-              height: "100%",
-              display: "flex",
-              justifyContent: "center",
-              flexDirection: "column",
-            }}
-          >
-            <TitleText />
-            <Hidden mdDown>
-              <DescriptionText />
-            </Hidden>
-          </Box>
+    <SectionBox>
+      <EntryAnimation>
+        <Grid
+          container
+          sx={{
+            ...defaultContentPadding,
+            paddingTop: 6,
+            paddingBottom: 8,
+          }}
+          spacing={4}
+        >
+          <Grid item xs={12} md={6}>
+            <Box
+              sx={{
+                height: "100%",
+                display: "flex",
+                justifyContent: "center",
+                flexDirection: "column",
+              }}
+            >
+              <TitleText />
+              <Hidden mdDown>
+                <DescriptionText />
+              </Hidden>
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Box
+              sx={{
+                height: "100%",
+                display: "flex",
+                justifyContent: "center",
+                flexDirection: "column",
+              }}
+            >
+              <img
+                src={NFT}
+                alt="NFT"
+                style={{ alignSelf: "center", maxWidth: "100%" }}
+              />
+              <Hidden mdUp>
+                <DescriptionText />
+              </Hidden>
+            </Box>
+          </Grid>
         </Grid>
-        <Grid item xs={12} md={6}>
-          <Box
-            sx={{
-              height: "100%",
-              display: "flex",
-              justifyContent: "center",
-              flexDirection: "column",
-            }}
-          >
-            <img
-              src={NFT}
-              alt="NFT"
-              style={{ alignSelf: "center", maxWidth: "100%" }}
-            />
-            <Hidden mdUp>
-              <DescriptionText />
-            </Hidden>
-          </Box>
-        </Grid>
-      </Grid>
-    </EntryAnimation>
+      </EntryAnimation>
+    </SectionBox>
   );
 }

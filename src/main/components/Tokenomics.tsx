@@ -11,6 +11,7 @@ import ShiftTeamIcon from "../../assets/shiftTeam.png";
 import { defaultContentPadding } from "../../utils/theme";
 import EntryAnimation from "../../common/components/EntryAnimation";
 import CountUp from "react-countup";
+import SectionBox from "../../common/components/SectionBox";
 
 function InfoLine(props: { title: string; subtitle: string }) {
   const { title, subtitle } = props;
@@ -125,104 +126,106 @@ export default function Tokenomics() {
   const { t } = useTranslation();
 
   return (
-    <EntryAnimation>
-      <Grid
-        container
-        sx={{
-          ...defaultContentPadding,
-          paddingTop: 4,
-          paddingBottom: 4,
-        }}
-        spacing={6}
-      >
-        <Grid item xs={12} display="flex" justifyContent="center">
-          <Typography variant="h2">{t("tokenomics")}</Typography>
-        </Grid>
-        <Grid item container xs={12} md={6} spacing={2}>
-          <Grid item xs={12}>
-            <Typography variant="subtitle1">
-              {t("tokenomicsSubtitle")}
-            </Typography>
-          </Grid>
-          <Grid item xs={12}>
-            <InfoLine
-              title={t("tokenomicsItem1Title")}
-              subtitle={t("tokenomicsItem1Subtitle")}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <InfoLine
-              title={t("tokenomicsItem2Title")}
-              subtitle={t("tokenomicsItem2Subtitle")}
-            />
-          </Grid>
-        </Grid>
+    <SectionBox>
+      <EntryAnimation>
         <Grid
-          item
-          xs={12}
-          md={6}
+          container
           sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
+            ...defaultContentPadding,
+            paddingTop: 4,
+            paddingBottom: 4,
           }}
+          spacing={6}
         >
-          <ValueLine
-            value="1000000000000"
-            subtitle={t("tokenomicsTokensCount")}
-            animated
-          />
-          <ValueLine value="4%" subtitle={t("tokenomicsTeamTokens")} />
+          <Grid item xs={12} display="flex" justifyContent="center">
+            <Typography variant="h2">{t("tokenomics")}</Typography>
+          </Grid>
+          <Grid item container xs={12} md={6} spacing={2}>
+            <Grid item xs={12}>
+              <Typography variant="subtitle1">
+                {t("tokenomicsSubtitle")}
+              </Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <InfoLine
+                title={t("tokenomicsItem1Title")}
+                subtitle={t("tokenomicsItem1Subtitle")}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <InfoLine
+                title={t("tokenomicsItem2Title")}
+                subtitle={t("tokenomicsItem2Subtitle")}
+              />
+            </Grid>
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            md={6}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <ValueLine
+              value="1000000000000"
+              subtitle={t("tokenomicsTokensCount")}
+              animated
+            />
+            <ValueLine value="4%" subtitle={t("tokenomicsTeamTokens")} />
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <InfoData
+              imageSrc={TeamIcon}
+              title={t("tokenomicsCommunityTitle")}
+              text={t("tokenomicsCommunityText")}
+              actionLinks={[
+                {
+                  text: t("tokenomicsJoinTelegram"),
+                  url: "https://t.me/rivrkitty",
+                },
+              ]}
+            />
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <InfoData
+              imageSrc={SafeIcon}
+              title={t("tokenomicsSafeTitle")}
+              text={t("tokenomicsSafeText")}
+              actionLinks={[
+                {
+                  text: t("tokenomicsAudit"),
+                  url: "https://github.com/rivrkitty/rivrkitty-contracts/raw/master/audits/TechRate.pdf",
+                },
+              ]}
+            />
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <InfoData
+              imageSrc={ShiftTeamIcon}
+              title={t("tokenomicsVestingTitle")}
+              text={t("tokenomicsVestingText")}
+              actionLinks={[
+                {
+                  text: t("tokenomicsLink", { number: 1 }),
+                  url: "https://moonriver.moonscan.io/address/0x6022cfac688d7a4bdDBccDCe8a7DEcaF253bb56F",
+                },
+                {
+                  text: t("tokenomicsLink", { number: 2 }),
+                  url: "https://moonriver.moonscan.io/address/0xF0876BC01A41914f26b6Fe4CdD2fD57e4CEE5A0A",
+                },
+                {
+                  text: t("tokenomicsLink", { number: 3 }),
+                  url: "https://moonriver.moonscan.io/address/0xe9CA83fE848D5C445f001eE0CCa2Bdb94963436F",
+                },
+              ]}
+            />
+          </Grid>
         </Grid>
-        <Grid item xs={12} md={4}>
-          <InfoData
-            imageSrc={TeamIcon}
-            title={t("tokenomicsCommunityTitle")}
-            text={t("tokenomicsCommunityText")}
-            actionLinks={[
-              {
-                text: t("tokenomicsJoinTelegram"),
-                url: "https://t.me/rivrkitty",
-              },
-            ]}
-          />
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <InfoData
-            imageSrc={SafeIcon}
-            title={t("tokenomicsSafeTitle")}
-            text={t("tokenomicsSafeText")}
-            actionLinks={[
-              {
-                text: t("tokenomicsAudit"),
-                url: "https://github.com/rivrkitty/rivrkitty-contracts/raw/master/audits/TechRate.pdf",
-              },
-            ]}
-          />
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <InfoData
-            imageSrc={ShiftTeamIcon}
-            title={t("tokenomicsVestingTitle")}
-            text={t("tokenomicsVestingText")}
-            actionLinks={[
-              {
-                text: t("tokenomicsLink", { number: 1 }),
-                url: "https://moonriver.moonscan.io/address/0x6022cfac688d7a4bdDBccDCe8a7DEcaF253bb56F",
-              },
-              {
-                text: t("tokenomicsLink", { number: 2 }),
-                url: "https://moonriver.moonscan.io/address/0xF0876BC01A41914f26b6Fe4CdD2fD57e4CEE5A0A",
-              },
-              {
-                text: t("tokenomicsLink", { number: 3 }),
-                url: "https://moonriver.moonscan.io/address/0xe9CA83fE848D5C445f001eE0CCa2Bdb94963436F",
-              },
-            ]}
-          />
-        </Grid>
-      </Grid>
-    </EntryAnimation>
+      </EntryAnimation>
+    </SectionBox>
   );
 }

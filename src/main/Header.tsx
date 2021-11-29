@@ -5,7 +5,7 @@ import Link from "@mui/material/Link";
 import Box, { BoxProps } from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import logo from "../assets/logo.png";
-import RKITTY from "../assets/RKITTY.png";
+import RKITTY from "../assets/RKITTY.svg";
 import WALLET from "../assets/token/WALLET.png";
 import FancyButton from "../common/components/FancyButton";
 import { useTranslation } from "react-i18next";
