@@ -74,6 +74,7 @@ export default function IntroVideo() {
               sx={{ maxWidth: "100%" }}
               loop
               muted
+              playsInline
             >
               <source src="videos/intro.m4v" type="video/mp4" />
             </Box>

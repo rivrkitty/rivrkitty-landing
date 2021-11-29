@@ -41,7 +41,10 @@ export default function Contact() {
             <Typography variant="subtitle1" sx={{ ml: 2 }}>
               {t("contactAddress")}
             </Typography>
-            <Typography variant="body1" sx={{ ml: 2 }}>
+            <Typography
+              variant="body1"
+              sx={{ ml: 2, mt: 1, lineBreak: "anywhere" }}
+            >
               0xC2b0435276139731d82Ae2Fa8928c9b9De0761c1
             </Typography>
             <Hidden mdUp>
