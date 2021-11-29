@@ -12,8 +12,9 @@ import { useTranslation } from "react-i18next";
 import MoreMenu from "../common/components/HeaderComponents/MoreMenu";
 import MobileMenu from "../common/components/HeaderComponents/MobileMenu";
 import { defaultContentPadding } from "../utils/theme";
+import { Theme } from "@mui/material";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme: Theme) => ({
   container: {
     display: "flex",
     flexDirection: "row",
@@ -28,13 +29,16 @@ const useStyles = makeStyles({
     color: "white",
   },
   logo: {
-    height: 30,
+    height: 25,
+    [theme.breakpoints.up("md")]: {
+      height: 30,
+    },
     marginRight: 16,
   },
   walletIcon: {
     verticalAlign: "middle",
   },
-});
+}));
 
 export default function Header(props: BoxProps) {
   const { sx, ...other } = props;
@@ -64,7 +68,12 @@ export default function Header(props: BoxProps) {
     >
       <Link href={"https://rivrkitty.com"}>
         <img className={classes.logo} src={RKITTY} alt="RivrKitty" />
-        <img className={classes.logo} src={logo} alt="RivrKitty" />
+        <img
+          className={classes.logo}
+          style={{ marginTop: 6 }}
+          src={logo}
+          alt="RivrKitty"
+        />
       </Link>
       <MediaQuery maxWidth={1023}>
         <div
